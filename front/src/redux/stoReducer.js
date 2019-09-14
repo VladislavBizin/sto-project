@@ -1,3 +1,4 @@
+import { clientsAPI } from "../DAL/clients.api";
 
 
 
@@ -28,10 +29,20 @@ const stoReducer = (state = initialState, action) => {
     }
 }
 
-const setClientsAC = () => ({type: SET_CLIENTS, clients});
-const setCarsAC = () => ({type: SET_CARS, cars});
-const setOrdersAC = () => ({type: SET_ORDERS, orders});
+const setClientsAC = (clients) => ({type: SET_CLIENTS, clients});
+// const setCarsAC = () => ({type: SET_CARS, cars});
+// const setOrdersAC = () => ({type: SET_ORDERS, orders});
 export const getClients = () => async(dispatch, getState)=>{
-    
+    try{
+        const res = await clientsAPI.getClients();
+        // console.log(result);
+        dispatch(setClientsAC(res));
+
+    }
+    catch(error){
+
+    }
+   
+   
 }
 export default stoReducer;
