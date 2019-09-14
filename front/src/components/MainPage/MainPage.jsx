@@ -5,7 +5,7 @@ function MainPage() {
   return (
     <div className={styles.container}>
         <input className={styles.userInput}></input>
-        <button classname={styles.but} onClick={ addUser }>Add user</button>
+        <button classname={styles.but} onClick={() => {} }>Add user</button>
     </div>
   );
 }
