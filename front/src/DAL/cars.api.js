@@ -12,5 +12,4 @@ export const carsAPI = {
         return instance.get("cars");
     }
 
-
 };
